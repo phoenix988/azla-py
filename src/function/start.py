@@ -13,6 +13,7 @@ def start_azla(self, Default, Colors):
      self.grid_layout_question.add_widget(self.correct_label)
      # self.box_question.add_widget(self.incorrect_label)
 
+
      # Shows the first question
      for index, (key, value) in enumerate(Default.labels_widgets.items()):
          if index == 0:

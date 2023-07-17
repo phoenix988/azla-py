@@ -6,6 +6,19 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.label import Label
 
 from words.init import Word
+from src.colors import Colors, Size
+
+# function to shuffle a dict
+def shuffle(list):
+    questions_word = []
+    questions_correct = []
+    for key, value in list.items():
+        questions_word.append(value)
+        questions_correct.append(key)
+        pairs = zip(questions_word, questions_correct)
+        pairs = set(pairs)
+    return pairs
+
 
 class Question():
     options = Word.word_list
@@ -18,11 +31,18 @@ class Question():
         labels_widgets = {}
         correct = {}
         word = {}
-        for key, value in choice.items():
-            text = f'What is {value} in Azerbajani ?'
-            correct[value] = key
-            word[value] = value
-            labels_widgets[key] = Label(text=text,size_hint=(0.3, 0.01), pos_hint={'center_x': 0.5, 'center_y': 2})
+        
+        # Shuffle the list
+        choice = shuffle(choice)
+
+        for questions in choice:
+            formatted_text = f"[color={Colors.label}]{questions[0]}[/color]"
+            formatted_text = f"What is {formatted_text} in Azerbajani"
+            correct[questions[0]] = questions[1]
+            word[questions[0]] = questions[0]
+            labels_widgets[questions[1]] = Label(size_hint=(0.3, 0.01), pos_hint={'center_x': 0.5, 'center_y': 2})
+            labels_widgets[questions[1]].markup = True
+            labels_widgets[questions[1]].text = formatted_text.strip()
         return labels_widgets, correct, word
     def word_options():
         option_widgets = {}
