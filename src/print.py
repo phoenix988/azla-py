@@ -15,6 +15,12 @@ class Text:
     no = "No"
     thank_you = "Thank you for using Azla written in python"
 
+    def what_is_word(word):
+        return f'what is {word} in Azerbajani ?'
+
+    def incorrect_line(correct_answer):
+        return f'Incorrect. The correct answer is {correct_answer}'
+
 
 def end_result(opt):
     # Prints your result

@@ -3,6 +3,10 @@ from list.list import Word
 from src.colors import Color
 from src.print import Text
 
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+
 
 def get_result():
     # creates emtpy result table
@@ -47,3 +51,4 @@ def question(choice):
             clear()
 
     return result
+

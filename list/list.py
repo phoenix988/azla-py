@@ -1,15 +1,18 @@
 # defines all the words available to the program
 class Word():
     word_list = {
-        'basic':  {
+        'Nouns':  {
             "alma": "apple",
-            "salam": "hello", },
+            "salam": "hello",
+            "sakit": "calm",
+            "masin": "car",
+            },
         'basic_2': {
             "sakit": "calm"
         },
         'basic_3': {
             "sakit": "calm",
-            "alma": "apple"
+            "alma": "apple",
         }, }
 
     def __init__(self):
