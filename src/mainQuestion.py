@@ -31,7 +31,7 @@ class Question():
         labels_widgets = {}
         correct = {}
         word = {}
-        
+
         # Shuffle the list
         choice = shuffle(choice)
 

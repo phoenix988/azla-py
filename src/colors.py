@@ -7,7 +7,6 @@ class Colors():
     correct = "#b4be82"
     incorrect = "#e27878"
 
+
 class Size():
     normal = 25
-
-
